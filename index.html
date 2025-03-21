@@ -60,11 +60,17 @@
       margin-bottom: 10px;
     }
 
+    /* Dancing Names Animation */
     .names {
       font-weight: bold;
       font-size: 26px;
       color: #B22222;
       margin: 10px 0;
+      animation: dance 2s infinite alternate ease-in-out;
+    }
+    @keyframes dance {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
     }
 
     .special-message {
