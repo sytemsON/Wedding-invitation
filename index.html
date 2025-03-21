@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wedding Invitation</title>
+  <meta property="og:title" content="You're Invited - Miriam & Michael's Wedding">
+  <meta property="og:description" content="Join us in celebrating the joyous union of Miriam Wawuda Kibongo & Michael Mbugua Gitau on April 26, 2025.">
+  <meta property="og:image" content="https://i.imgur.com/hU4oSfw.jpeg">
+  <meta property="og:type" content="website">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
 
@@ -12,120 +16,40 @@
       padding: 0;
       background: linear-gradient(to bottom, #FAD2C3, #FFFFFF);
       font-family: 'Playfair Display', serif;
-      scroll-behavior: smooth;
       overflow-x: hidden;
-      height: 200vh;
-    }
-
-    /* Falling Petals Animation */
-    .falling-petals {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .falling-petal {
-      position: absolute;
-      top: -50px;
-      width: 40px;
-      height: 40px;
-      background: url('https://cdn.pixabay.com/photo/2012/04/11/17/14/petal-29359_960_720.png') no-repeat center;
-      background-size: contain;
-      opacity: 0.8;
-      animation: fall linear infinite;
-    }
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    /* Randomize each petal’s start position, duration, and delay */
-    .falling-petal:nth-child(1) {
-      left: 10%;
-      animation-duration: 8s;
-      animation-delay: 0s;
-    }
-    .falling-petal:nth-child(2) {
-      left: 20%;
-      animation-duration: 10s;
-      animation-delay: 1s;
-    }
-    .falling-petal:nth-child(3) {
-      left: 30%;
-      animation-duration: 9s;
-      animation-delay: 3s;
-    }
-    .falling-petal:nth-child(4) {
-      left: 40%;
-      animation-duration: 7s;
-      animation-delay: 2s;
-    }
-    .falling-petal:nth-child(5) {
-      left: 50%;
-      animation-duration: 11s;
-      animation-delay: 0s;
-    }
-    .falling-petal:nth-child(6) {
-      left: 60%;
-      animation-duration: 8s;
-      animation-delay: 2s;
-    }
-    .falling-petal:nth-child(7) {
-      left: 70%;
-      animation-duration: 9s;
-      animation-delay: 1s;
-    }
-    .falling-petal:nth-child(8) {
-      left: 80%;
-      animation-duration: 10s;
-      animation-delay: 4s;
-    }
-    .falling-petal:nth-child(9) {
-      left: 90%;
-      animation-duration: 7s;
-      animation-delay: 2s;
-    }
-    .falling-petal:nth-child(10) {
-      left: 95%;
-      animation-duration: 12s;
-      animation-delay: 3s;
     }
 
     .container {
-      padding: 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       min-height: 100vh;
       position: relative;
       z-index: 2;
+      padding: 20px;
     }
 
+    /* Elegant Invitation with a Gold Gradient Border */
     .invitation {
-      background: rgba(255, 255, 255, 0.97);
-      padding: 20px;
+      background: white;
+      padding: 40px 20px;
       border-radius: 15px;
       width: 90%;
       max-width: 460px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      border: 4px solid #800020;
+      border: 4px solid transparent;
+      border-image: linear-gradient(45deg, #FFD700, #800020) 1;
       text-align: center;
       position: relative;
+      z-index: 3;
+      margin-bottom: 20px;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 48px;
       color: #800020;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .image-frame img {
@@ -133,29 +57,42 @@
       max-width: 250px;
       border-radius: 50%;
       border: 5px solid #800020;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
     }
 
     .names {
       font-weight: bold;
       font-size: 26px;
       color: #B22222;
-      animation: dance 2s infinite alternate ease-in-out;
+      margin: 10px 0;
     }
 
-    @keyframes dance {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
-    }
-
-    .details {
+    .special-message {
+      color: #800020;
+      font-weight: bold;
       font-size: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    /* Venue text in burgundy */
     .venue-text {
       color: #800020;
+      font-weight: bold;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      gap: 10px;
+    }
+
+    .contact-box {
+      background: #800020;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      width: 48%;
+      text-align: center;
       font-weight: bold;
     }
 
@@ -165,94 +102,53 @@
       color: #800020;
       margin-bottom: 15px;
     }
-
-    .contact-container {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
-
-    .contact-box {
-      flex: 1;
-      border: 2px solid #800020;
-      padding: 8px;
-      font-weight: bold;
-      background: #800020;
-      color: white;
-      border-radius: 10px;
-      font-size: 14px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      margin: 5px;
-    }
-
+    
+    /* Map Styling */
     .map-container {
-      margin-top: 15px;
-      width: 100%;
-      max-width: 350px;
-      height: 200px;
-      margin: auto;
-      border: 2px solid #800020;
-      border-radius: 8px;
+      width: 90%;
+      max-width: 460px;
+      border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      z-index: 3;
     }
 
-    /* Static Flower Petals in Corners */
-    .petal {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background: url('https://cdn.pixabay.com/photo/2012/04/11/17/14/petal-29359_960_720.png') no-repeat center;
-      background-size: contain;
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
     }
-    .petal-top-left { top: -20px; left: -20px; }
-    .petal-top-right { top: -20px; right: -20px; }
-    .petal-bottom-left { bottom: -20px; left: -20px; }
-    .petal-bottom-right { bottom: -20px; right: -20px; }
+
+    /* Elegant Tagline */
+    .tagline {
+      font-family: 'Great Vibes', cursive;
+      font-size: 28px;
+      color: #800020;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="falling-petals">
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-    <div class="falling-petal"></div>
-  </div>
-
   <div class="container">
     <div class="invitation">
-      <!-- Static Flower Petals in Corners -->
-      <div class="petal petal-top-left"></div>
-      <div class="petal petal-top-right"></div>
-      <div class="petal petal-bottom-left"></div>
-      <div class="petal petal-bottom-right"></div>
-
       <h1>You're Invited</h1>
-
       <div class="image-frame">
         <img src="https://i.imgur.com/9nqd9TK.jpeg" alt="Wedding Couple">
       </div>
-
       <p class="names">Miriam Wawuda Kibongo &amp; Michael Mbugua Gitau</p>
-      <p class="details">
-        The joy of your presence is requested at our wedding, a celebration of love and commitment shared with family and friends.
+      <p class="special-message">
+        Together with our beloved parents,  
+        <br><strong>The late Mr. Lawrence Kibongo &amp; Mrs. Margaret Kibongo,</strong>  
+        <br><strong>Mr. &amp; Mrs. Gitau Ndua,</strong>  
+        <br>have the pleasure of inviting you to celebrate our wedding, a joyous union of love and commitment shared with family and friends.
       </p>
-
       <p><strong>📅 Date:</strong> Saturday, 26th April 2025</p>
       <p><strong>📍 Venue:</strong> <span class="venue-text">Word Alive Outreach Ministries Church, Kisauni, Mombasa</span></p>
       <p><strong>⏰ Time:</strong> 10:00 AM</p>
-
       <p class="wedding-verse">
         "Therefore what God has joined together, let no one separate." - Mark 10:9
       </p>
-
       <div class="contact-container">
         <div class="contact-box">
           <p><strong>Bride</strong></p>
@@ -263,12 +159,12 @@
           <p>0723 587 198</p>
         </div>
       </div>
+      <p class="tagline">Forever &amp; Always</p>
+    </div>
 
-      <div class="map-container">
-        <iframe width="100%" height="100%" frameborder="0" style="border:0"
-          src="https://www.google.com/maps?q=-4.0283,39.6887&hl=es;z=14&output=embed" allowfullscreen>
-        </iframe>
-      </div>
+    <!-- Google Map Embed with Coordinates -->
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=-4.0283,39.6887&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </body>
