@@ -80,9 +80,12 @@
       margin-bottom: 15px;
     }
 
-    .venue-text {
+    /* Unified Event Details Styling */
+    .event-details {
       color: #800020;
       font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
     .contact-container {
@@ -133,6 +136,14 @@
       color: #800020;
       margin-top: 20px;
     }
+
+    /* Countdown Timer Styling */
+    #countdown {
+      font-size: 18px;
+      color: #800020;
+      margin-top: 15px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -149,9 +160,9 @@
         <br><strong>Mr. &amp; Mrs. Gitau Ndua,</strong>  
         <br>have the pleasure of inviting you to celebrate our wedding, a joyous union of love and commitment shared with family and friends.
       </p>
-      <p><strong>📅 Date:</strong> Saturday, 26th April 2025</p>
-      <p><strong>📍 Venue:</strong> <span class="venue-text">Word Alive Outreach Ministries Church, Kisauni, Mombasa</span></p>
-      <p><strong>⏰ Time:</strong> 10:00 AM</p>
+      <p class="event-details">📅 Date: Saturday, 26th April 2025</p>
+      <p class="event-details">📍 Venue: Word Alive Outreach Ministries Church, Kisauni, Mombasa</p>
+      <p class="event-details">⏰ Time: 10:00 AM</p>
       <p class="wedding-verse">
         "Therefore what God has joined together, let no one separate." - Mark 10:9
       </p>
@@ -166,6 +177,8 @@
         </div>
       </div>
       <p class="tagline">Forever &amp; Always</p>
+      <!-- Countdown Timer -->
+      <div id="countdown"></div>
     </div>
 
     <!-- Google Map Embed with Coordinates -->
@@ -173,5 +186,33 @@
       <iframe src="https://maps.google.com/maps?q=-4.0283,39.6887&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set the target date and time
+    const countdownDate = new Date("April 26, 2025 10:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      
+      // Time calculations for days, hours, minutes, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the result
+      document.getElementById("countdown").innerHTML = 
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      
+      // If the countdown is finished, display some text
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "The wedding has begun!";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
